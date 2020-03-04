@@ -1,0 +1,91 @@
+
+body {
+  background-color: #3E4554;
+  font: 100% palanquin;
+  height: 100%;
+  padding: 0% 4% 0% 4%;
+}
+
+
+#capa {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#capa-itens {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.texto{
+    color: #3E4554;
+}
+
+.titulo {
+    color: #3E4554;
+    font-weight: bold;
+}
+
+
+
+/* only used for background overlay not needed for centering */
+form:before {
+
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background: #65D46E;
+    z-index: -1;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+
+}
+
+.botao, .botao:hover{
+
+  margin: 0;
+  padding: 0 13px 0 13px;
+  margin-left: 0px;
+  border-radius: 10px;
+  border:0;
+  box-shadow: none;
+  color: #FAFAFA;
+  font-size: 1.4em;
+  z-index: 3;
+  background-color: #3E4554; 
+
+}
+
+#entrada{
+
+  z-index: 2;
+  border-radius: 10px 0 0 10px;
+  color: #3E4554;
+  font-size: 1.5em;
+  border:none;
+  box-shadow: none;
+  text-transform: uppercase;
+
+}
+
+#entrada:focus{
+
+  border:none;
+  box-shadow: none;
+
+}
+
+
+.form-box{
+
+margin: 1em 0 1em 0;
+
+
+}
+
