@@ -23,10 +23,14 @@ $(function(){
         var username = json.login;
         var aviurl = json.avatar_url;
         var profileurl = json.html_url;
+        var perfilbio = json.bio;
         var location = json.location;
-        var followersnum = json.followers;
+        var seguidores = json.followers;
         var followingnum = json.following;
         var reposnum = json.public_repos;
+        var repositorios = json.public_repos;
+        var localizacao = json.location;
+        var ultimaatividade = json.updated_at;
         
         if(nomeTodo == undefined) { 
           nomeTodo = username; 
@@ -34,7 +38,25 @@ $(function(){
         
         //var outhtml = '<h2>'+nomeTodo+'<p><img class="foto" src="'+aviurl+'" width="200" height="200" alt="'+'"></a></div>';
 
-        var outhtml = '<div id="perfiluser" class="row"><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center"><img src="img/imgteste.jpeg" class="foto img-responsive"></div><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left"><div class="nome-completo"><p><p>José Luiz Corrêa Junior</div><div class="nome-usuario">juninhoojl<p></div><hr><div class="texto-perfil">TEXTO</div></div><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left"><p><p><div class="nome-usuario"><p><i class="fa fa-users" aria-hidden="true"></i> 13 Seguidores<p><i class="fa fa-folder" aria-hidden="true"></i> 33 Repositórios<p><i class="fa fa-clock" aria-hidden="true"></i> Ultima Atividade<p><i class="fa fa-map-marker" aria-hidden="true"></i> Location<p></div></div></div>';
+        var outhtml  ='<div id="perfiluser" class="row">';
+            outhtml +=  '<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">';
+            outhtml +=    '<img src="'+aviurl+'" class="foto img-responsive">';
+            outhtml +=  '</div>';
+            outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
+            outhtml +=  '<div class="nome-completo">';
+            outhtml +=    '<p><p>José Luiz Corrêa Junior';
+            outhtml +=  '</div>';
+            outhtml +=  '<div class="nome-usuario">';
+            outhtml +=    'juninhoojl<p>';
+            outhtml +=  '</div><hr>';
+            outhtml +=  '<div class="texto-perfil">';
+            outhtml +=    perfilbio;
+            outhtml +=  '</div>';
+            outhtml +='</div>';
+            outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
+            outhtml +=' <p><p><div class="nome-usuario">';
+            outhtml +='   <p><i class="fa fa-users" aria-hidden="true"></i> '+seguidores+' Seguidores<p><i class="fa fa-folder" aria-hidden="true"></i> '+repositorios+' Repositórios<p><i class="fa fa-clock" aria-hidden="true"></i> '+ultimaatividade+' <p><i class="fa fa-map-marker" aria-hidden="true"></i> '+localizacao+' <p></div></div></div>';
+             
 
         var repositories;
         $.getJSON(repouri, function(json){
@@ -45,14 +67,14 @@ $(function(){
         function outputPageContent() {
 
         // Se nao tiver nenhum repositorio
-          if(repositories.length == 0) {
+         if(repositories.length == 0) {
            outhtml = outhtml + '<p>No repos!</p></div>'; 
          } else {
 
             
             // Inicia container cards
 
-            outhtml += '<div class="card-columns">';
+            outhtml += '<h2><div class="card-columns">';
     
             $.each(repositories, function(index) {
               var repname = repositories[index].name;
@@ -69,13 +91,14 @@ $(function(){
 
             });
 
-            outhtml += '</div>';
+            outhtml += '</div></h2>';
             
         }
 
         // Coloca dados na tela
           
           $('#ghapidata').html(outhtml);
+
 
         } // end outputPageContent()
       } // end else statement
