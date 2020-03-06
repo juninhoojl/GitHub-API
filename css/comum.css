@@ -2,7 +2,7 @@ body {
   background-color: #3F4553;
   font: 100% palanquin;
   height: 100%;
-  padding: 0 1em 0 1em;
+  padding: 0 0.5em 0 0.5em;
 }
 
 #capa {
@@ -46,7 +46,7 @@ form:before {
 .botao, .botao:hover{
 
   margin: 0;
-  padding: 0 13px 0 13px;
+  padding: 0 5px 0 5px;
   margin-left: 0px;
   border-radius: 10px;
   border:0;
@@ -80,15 +80,15 @@ form:before {
 
 .form-box{
 
-margin: 1em 0 1em 0;
+  margin: 1em 0 1em 0;
 
 
 }
 
 #caixa{
-  margin: 1em;
+  margin: 0;
+  padding: 0;
 }
-
 
 
 
@@ -105,7 +105,7 @@ margin: 1em 0 1em 0;
   background-color: #3F4553;
   border-radius: 10px 10px 0 0;
   color: #FAFAFA;
-  font-size: 0.8em;
+  font-size: 1.2em;
   margin:0;
 }
 
@@ -151,7 +151,7 @@ margin-bottom: auto;
 
 .texto-perfil{
       color: #3F4553;
-      font-size: 1.1em;
+      font-size: 1.2em;
 
 
 }

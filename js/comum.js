@@ -74,7 +74,7 @@ $(function(){
             
             // Inicia container cards
 
-            outhtml += '<h2><div class="card-columns">';
+            outhtml += '<div class="card-columns">';
     
             $.each(repositories, function(index) {
               var repname = repositories[index].name;
@@ -91,7 +91,7 @@ $(function(){
 
             });
 
-            outhtml += '</div></h2>';
+            outhtml += '</div>';
             
         }
 
