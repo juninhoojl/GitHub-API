@@ -3,6 +3,8 @@
 <html lang="en">
   <head>
 
+    <meta name="author" content="juninhoojl">
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
 
@@ -36,8 +38,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/icon_72x72.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/icon_114x114.png">    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 
   </head>
   <body>
@@ -46,23 +49,19 @@
         <div id="capa-itens">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-                        <h1 class="display-4 titulo">StalkerHub <p>Teste</p></h1>
-                        
-                        
-                  <div id="result"></div>
-                            
+                    <div id="caixa" class="col-xl-10 col-lg-10 col-md-11 col-sm-12 mx-auto text-center form p-4">
+                        <h1 class="display-4 titulo">StalkerHub</h1>
 
                         <div class="px-2">
-
 
                             <form action="" class="justify-content-center">
 
                                 <div class="input-group form-box">
 
-                                      <input id="entrada" type="text" class="form-control" placeholder="juninhoojl">
+                                      <input type="text" id="entrada" class="form-control" placeholder="juninhoojl" value="juninhoojl">
                                     <div class="input-group-append">
-                                      <button class="btn btn-secondary botao" type="button">
+                                      <button href="#" id="botao" class="btn btn-secondary botao" type="button">
+
                                         <i class="fa fa-search"></i>
                                       </button>
                                     </div>
@@ -70,19 +69,24 @@
 
                             </form>
                         </div>
+
+                        <div id="seguidores" class="clearfix"></div>
+
+                        <div id="ghapidata" class="clearfix"></div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
   
-    <img src="https://avatars0.githubusercontent.com/u/24274125?v=4">
+    <!-- <img src="https://avatars0.githubusercontent.com/u/24274125?v=4"> -->
 
     <!-- Global JavaScript -->
     <script type="text/javascript" src="js/comum.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>

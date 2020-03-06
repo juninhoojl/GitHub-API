@@ -1,11 +1,9 @@
-
 body {
-  background-color: #3E4554;
+  background-color: #3F4553;
   font: 100% palanquin;
   height: 100%;
-  padding: 0% 4% 0% 4%;
+  padding: 0 1em 0 1em;
 }
-
 
 #capa {
     text-align: center;
@@ -21,15 +19,13 @@ body {
 }
 
 .texto{
-    color: #3E4554;
+    color: #3F4553;
 }
 
 .titulo {
-    color: #3E4554;
+    color: #3F4553;
     font-weight: bold;
 }
-
-
 
 /* only used for background overlay not needed for centering */
 form:before {
@@ -40,7 +36,7 @@ form:before {
     left: 0;
     position: absolute;
     top: 0;
-    background: #65D46E;
+    background: #AC9DE7;
     z-index: -1;
     border-radius: 10px;
     box-shadow:5px 5px 5px rgba(0,0,0,0.1);
@@ -58,7 +54,7 @@ form:before {
   color: #FAFAFA;
   font-size: 1.4em;
   z-index: 3;
-  background-color: #3E4554; 
+  background-color: #3F4553; 
 
 }
 
@@ -66,7 +62,7 @@ form:before {
 
   z-index: 2;
   border-radius: 10px 0 0 10px;
-  color: #3E4554;
+  color: #3F4553;
   font-size: 1.5em;
   border:none;
   box-shadow: none;
@@ -89,3 +85,68 @@ margin: 1em 0 1em 0;
 
 }
 
+#caixa{
+  margin: 1em;
+}
+
+
+
+
+.card{
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+}
+
+.card > .card-header{
+  background-color: #3F4553;
+  border-radius: 10px 10px 0 0;
+  color: #FAFAFA;
+  font-size: 0.8em;
+
+}
+
+.card > .card-body{
+
+  background-color: #FAFAFA;
+  color: #3F4553;
+  font-size: 0.8em;
+
+}
+
+.card > .card-footer{
+
+  background-color: #FAFAFA;
+  color: #3F4553;
+  border-radius: 0 0 10px 10px;
+  font-size: 0.8em;
+
+}
+
+.icone{
+
+  color: #AC9DE7;
+}
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
