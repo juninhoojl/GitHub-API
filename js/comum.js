@@ -44,17 +44,12 @@ $(function(){
             outhtml +=  '</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=  '<div class="nome-completo">';
-<<<<<<< HEAD
+
             outhtml +=    '<a target="_blank" href="'+profileurl+'"><p><p>'+nomeTodo+ '</a>';
             outhtml +=  '</div>';
             outhtml +=  '<div class="nome-usuario">';
             outhtml +=   '<a target="_blank" href="'+profileurl+'">'+username+'<p></a>';
-=======
-            outhtml +=    '<p><p>José Luiz Corrêa Junior';
-            outhtml +=  '</div>';
-            outhtml +=  '<div class="nome-usuario">';
-            outhtml +=    'juninhoojl<p>';
->>>>>>> parent of 4822473... Links outras informacoes
+
             outhtml +=  '</div><hr>';
             outhtml +=  '<div class="texto-perfil">';
             outhtml +=    perfilbio;
