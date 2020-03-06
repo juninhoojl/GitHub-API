@@ -31,6 +31,9 @@ $(function(){
         var repositorios = json.public_repos;
         var localizacao = json.location;
         var ultimaatividade = json.updated_at;
+        var linkRepos = profileurl+'/repositories';
+        var linkSeguidores = profileurl+'/followers';
+        var buscaMapa = 'https://www.google.com/maps/place/'+location;
         
         if(nomeTodo == undefined) { 
           nomeTodo = username; 
@@ -44,10 +47,10 @@ $(function(){
             outhtml +=  '</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=  '<div class="nome-completo">';
-            outhtml +=    '<p><p>José Luiz Corrêa Junior';
+            outhtml +=    '<p><p>'+nomeTodo;
             outhtml +=  '</div>';
             outhtml +=  '<div class="nome-usuario">';
-            outhtml +=    'juninhoojl<p>';
+            outhtml +=    username+'<p>';
             outhtml +=  '</div><hr>';
             outhtml +=  '<div class="texto-perfil">';
             outhtml +=    perfilbio;
@@ -55,12 +58,15 @@ $(function(){
             outhtml +='</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=' <p><p><div class="nome-usuario">';
-            outhtml +='   <p><i class="fa fa-users" aria-hidden="true"></i> '+seguidores+' Seguidores<p><i class="fa fa-folder" aria-hidden="true"></i> '+repositorios+' Repositórios<p><i class="fa fa-clock" aria-hidden="true"></i> '+ultimaatividade+' <p><i class="fa fa-map-marker" aria-hidden="true"></i> '+localizacao+' <p></div></div></div>';
-             
+            outhtml +='   <p><a target="_blank" href="'+linkSeguidores+'"><i class="fa fa-users" aria-hidden="true"> '+seguidores+' Seguidores</i></a>'; 
+            outhtml +=    '<p><a target="_blank" href="'+linkRepos+'"><i class="fa fa-folder" aria-hidden="true"> '+repositorios+' Repositórios</i><p></a>';
+            outhtml +='<i class="fa fa-clock" aria-hidden="true"></i> '+ultimaatividade;
+            outhtml +='<p><a target="_blank" href="'+buscaMapa+'"><i class="fa fa-map-marker" aria-hidden="true"> '+localizacao+' </i><p></a></div></div></div>';
+            
 
         var repositories;
         $.getJSON(repouri, function(json){
-          repositories = json;   
+          repositories = json;
           outputPageContent();                
         });          
         
