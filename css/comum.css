@@ -96,6 +96,9 @@ margin: 1em 0 1em 0;
   background-color: transparent;
   border-color: transparent;
   border: none;
+  margin:0;
+  
+
 }
 
 .card > .card-header{
@@ -103,7 +106,7 @@ margin: 1em 0 1em 0;
   border-radius: 10px 10px 0 0;
   color: #FAFAFA;
   font-size: 0.8em;
-
+  margin:0;
 }
 
 .card > .card-body{
@@ -111,6 +114,7 @@ margin: 1em 0 1em 0;
   background-color: #FAFAFA;
   color: #3F4553;
   font-size: 0.8em;
+  margin:0;
 
 }
 
@@ -120,13 +124,56 @@ margin: 1em 0 1em 0;
   color: #3F4553;
   border-radius: 0 0 10px 10px;
   font-size: 0.8em;
+  margin:0;
+}
+
+.card-columns {
+  margin:0;
+  padding: 0;
 
 }
+
+.foto{
+  border-radius: 50%;
+  max-width: 90%;
+  height: auto;
+}
+
+.perfil{
+  padding: 10px;
+}
+
+.outras-info{
+
+  margin-top: auto;
+margin-bottom: auto;
+}
+
+.texto-perfil{
+      color: #3F4553;
+      font-size: 1.1em;
+
+
+}
+
+.nome-completo{
+  font-weight: bold;
+  font-size: 2em;
+  color: #3F4553;
+}
+
+.nome-usuario{
+  font-weight: normal;
+  font-size: 1.5em;
+  color: #3F4553;
+}
+
 
 .icone{
 
   color: #AC9DE7;
 }
+
 @media (min-width: 576px) {
     .card-columns {
         column-count: 2;

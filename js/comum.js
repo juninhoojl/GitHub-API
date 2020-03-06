@@ -32,8 +32,10 @@ $(function(){
           nomeTodo = username; 
         }
         
-        var outhtml = '<h2>'+nomeTodo+'<p><img src="'+aviurl+'" width="100" height="100" alt="'+'"></a></div>';
-        
+        //var outhtml = '<h2>'+nomeTodo+'<p><img class="foto" src="'+aviurl+'" width="200" height="200" alt="'+'"></a></div>';
+
+        var outhtml = '<div id="perfiluser" class="row"><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center"><img src="img/imgteste.jpeg" class="foto img-responsive"></div><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left"><div class="nome-completo"><p><p>José Luiz Corrêa Junior</div><div class="nome-usuario">juninhoojl<p></div><hr><div class="texto-perfil">TEXTO</div></div><div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left"><p><p><div class="nome-usuario"><p><i class="fa fa-users" aria-hidden="true"></i> 13 Seguidores<p><i class="fa fa-folder" aria-hidden="true"></i> 33 Repositórios<p><i class="fa fa-clock" aria-hidden="true"></i> Ultima Atividade<p><i class="fa fa-map-marker" aria-hidden="true"></i> Location<p></div></div></div>';
+
         var repositories;
         $.getJSON(repouri, function(json){
           repositories = json;   
@@ -72,7 +74,7 @@ $(function(){
         }
 
         // Coloca dados na tela
-          $('#seguidores').html(followersnum);
+          
           $('#ghapidata').html(outhtml);
 
         } // end outputPageContent()
