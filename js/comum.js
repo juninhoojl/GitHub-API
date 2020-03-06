@@ -44,12 +44,10 @@ $(function(){
             outhtml +=  '</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=  '<div class="nome-completo">';
-
             outhtml +=    '<a target="_blank" href="'+profileurl+'"><p><p>'+nomeTodo+ '</a>';
             outhtml +=  '</div>';
             outhtml +=  '<div class="nome-usuario">';
             outhtml +=   '<a target="_blank" href="'+profileurl+'">'+username+'<p></a>';
-
             outhtml +=  '</div><hr>';
             outhtml +=  '<div class="texto-perfil">';
             outhtml +=    perfilbio;
