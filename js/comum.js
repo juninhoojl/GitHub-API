@@ -6,12 +6,13 @@ $(function(){
 
     $('#ghapidata').html('<div id="loader"><img src="css/loader.gif" alt="loading..."></div>');
     
+
     var username = $('#entrada').val();
 
     var requri   = 'https://api.github.com/users/'+username;
 
     var repouri  = requri+'/repos';
-    
+
     requestJSON(requri, function(json) {
       if(json.message == "Not Found" || username == '') {
         $('#ghapidata').html("<h2>Usuario nao encontrado</h2>");
@@ -26,13 +27,14 @@ $(function(){
         var perfilbio = json.bio;
         var location = json.location;
         var seguidores = json.followers;
-        var followingnum = json.following;
+        var seguindo = json.following;
         var reposnum = json.public_repos;
         var repositorios = json.public_repos;
         var localizacao = json.location;
         var ultimaatividade = json.updated_at;
         var linkRepos = profileurl+'/repositories';
         var linkSeguidores = profileurl+'/followers';
+        var linkSeguindo = profileurl+'/following';
         var buscaMapa = 'https://www.google.com/maps/place/'+location;
         
         if(nomeTodo == undefined) { 
@@ -58,12 +60,11 @@ $(function(){
             outhtml +='</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=' <p><p><div class="nome-usuario">';
-            outhtml +='   <p><a target="_blank" href="'+linkSeguidores+'"><i class="fa fa-users" aria-hidden="true"> '+seguidores+' Seguidores</i></a>'; 
+            outhtml +='   <p><a target="_blank" href="'+linkSeguidores+'"><i class="fa fa-users" aria-hidden="true"> '+seguidores+' Seguidores</i></a>';
+            outhtml +='   <p><a target="_blank" href="'+linkSeguindo+'"><i class="fa fa-users" aria-hidden="true"> '+seguindo+' Seguindo</i></a>';  
             outhtml +=    '<p><a target="_blank" href="'+linkRepos+'"><i class="fa fa-folder" aria-hidden="true"> '+repositorios+' Repositórios</i><p></a>';
-            outhtml +='<i class="fa fa-clock" aria-hidden="true"></i> '+ultimaatividade;
             outhtml +='<p><a target="_blank" href="'+buscaMapa+'"><i class="fa fa-map-marker" aria-hidden="true"> '+localizacao+' </i><p></a></div></div></div>';
             
-
         var repositories;
         $.getJSON(repouri, function(json){
           repositories = json;
