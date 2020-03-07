@@ -15,7 +15,7 @@ $(function(){
 
     requestJSON(requri, function(json) {
       if(json.message == "Not Found" || username == '') {
-        $('#ghapidata').html("<h2>Usuario nao encontrado</h2>");
+        $('#ghapidata').html('<div class="nome-usuario">Usuário nao encontrado</div>');
       }
       
       else {
@@ -37,34 +37,51 @@ $(function(){
         var linkSeguindo = profileurl+'/following';
         var buscaMapa = 'https://www.google.com/maps/place/'+location;
         
-        if(nomeTodo == undefined) { 
-          nomeTodo = username; 
-        }
         
-        //var outhtml = '<h2>'+nomeTodo+'<p><img class="foto" src="'+aviurl+'" width="200" height="200" alt="'+'"></a></div>';
-
         var outhtml  ='<div id="perfiluser" class="row bloco-perfil">';
             outhtml +=  '<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">';
             outhtml +=    '<img src="'+aviurl+'" class="foto img-responsive">';
             outhtml +=  '</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
-            outhtml +=  '<div class="nome-completo">';
-            outhtml +=    '<a target="_blank" href="'+profileurl+'"><p><p>'+nomeTodo+ '</a>';
-            outhtml +=  '</div>';
-            outhtml +=  '<div class="nome-usuario">';
-            outhtml +=   '<a target="_blank" href="'+profileurl+'">'+username+'<p></a>';
-            outhtml +=  '</div>';
-            outhtml +=  '<div class="texto-perfil">';
-            outhtml +=    perfilbio;
-            outhtml +=  '</div>';
+            
+            if(nomeTodo == undefined) {
+
+              outhtml +=  '<div class="nome-completo">';
+              outhtml +=    '<a target="_blank" href="'+profileurl+'"><p><p>'+username+ '</a>';
+              outhtml +=  '</div>';
+            }else{
+              outhtml +=  '<div class="nome-completo">';
+              outhtml +=    '<a target="_blank" href="'+profileurl+'"><p><p>'+nomeTodo+ '</a>';
+              outhtml +=  '</div>';
+
+              outhtml +=  '<div class="nome-usuario">';
+              outhtml +=   '<a target="_blank" href="'+profileurl+'">'+username+'<p></a>';
+              outhtml +=  '</div>';
+
+            }
+            
+
+            if (perfilbio!=null) {
+              outhtml +=  '<div class="texto-perfil">';
+              outhtml +=    perfilbio;
+              outhtml +=  '</div>';
+
+            }
+            
             outhtml +='</div>';
             outhtml +='<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-left">';
             outhtml +=' <p><p><div class="nome-usuario">';
             outhtml +='   <p><a target="_blank" href="'+linkSeguidores+'"><i class="fa fa-users" aria-hidden="true"> '+seguidores+' Seguidores</i></a>';
             outhtml +='   <p><a target="_blank" href="'+linkSeguindo+'"><i class="fa fa-users" aria-hidden="true"> '+seguindo+' Seguindo</i></a>';  
             outhtml +=    '<p><a target="_blank" href="'+linkRepos+'"><i class="fa fa-folder" aria-hidden="true"> '+repositorios+' Repositórios</i><p></a>';
-            outhtml +='<p><a target="_blank" href="'+buscaMapa+'"><i class="fa fa-map-marker" aria-hidden="true"> '+localizacao+' </i><p></a></div></div></div>';
             
+            // So mostra localizacao se for diferente de null
+            
+            if(location!=null){
+              outhtml +='<p><a target="_blank" href="'+buscaMapa+'"><i class="fa fa-map-marker" aria-hidden="true"> '+localizacao+' </i><p></a>';
+            }
+
+            outhtml += '</div></div></div>';
         var repositories;
         $.getJSON(repouri, function(json){
           repositories = json;
@@ -75,18 +92,8 @@ $(function(){
 
         // Se nao tiver nenhum repositorio
          if(repositories.length == 0) {
-           outhtml = outhtml + '<p>No repos!</p></div>'; 
+           outhtml = outhtml + '</div>'; 
          } else {
-
-            
-            // Inicia container cards
-
-
-
-    // "git_url": "git://github.com/juninhoojl/DIY-Firewall.git",
-    // "ssh_url": "git@github.com:juninhoojl/DIY-Firewall.git",
-    // "clone_url": "https://github.com/juninhoojl/DIY-Firewall.git",
-    // "svn_url": "https://github.com/juninhoojl/DIY-Firewall"
 
             outhtml += '<div class="card-columns">';
     
@@ -103,7 +110,16 @@ $(function(){
               var faiconV = ' <a target="_blank" href="'+linkV+'"><i class="fa fa-eye icone" aria-hidden="true"></i></a>';
               outhtml += '<div class="card">';
               outhtml +=  '<div class="card-header">'+faiconD+repname+faiconV+'</div>';
-              outhtml +=  '<div class="card-body text-left">'+repdesc;
+
+
+              if(repdesc!=null){
+                outhtml +=  '<div class="card-body text-left">'+repdesc;
+
+              }else{
+                outhtml +=  '<div class="card-body text-left"> Repositório sem descrição!';
+
+              }
+              
               outhtml +=   '<hr><a target="_blank" href="'+ssh_url+'"> <i class="fas fa-terminal icone"></i> '+ssh_url+'</a><hr><p>';
               outhtml +=   '<a target="_blank" href="'+clone_url+'"> <i class="fa fa-clone icone " aria-hidden="true"></i> '+clone_url+'</a>';
               outhtml +=  '</div>';
