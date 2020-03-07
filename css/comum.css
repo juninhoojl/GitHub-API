@@ -3,11 +3,14 @@ body {
   font: 100% palanquin;
   height: 100%;
   padding: 0.5em;
+  margin:;
 }
 .bloco-perfil{
+  background-color: white;
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
 #capa {
     text-align: center;
     display: flex;
@@ -40,9 +43,11 @@ form:before {
     position: absolute;
     top: 0;
     background: #AC9DE7;
+    /*background-color: white;*/
     z-index: -1;
+    padding: 0;
     border-radius: 10px;
-    box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px #3F4553;
 
 }
 
@@ -108,12 +113,11 @@ form:before {
 }
 
 
-
 .card{
   background-color: transparent;
   border-color: transparent;
   border: none;
-  margin:5px;
+  margin:0;
   box-shadow: 0px 0px 5px #3F4553;
   border-radius: 10px;
 }
@@ -145,8 +149,7 @@ form:before {
 }
 
 .card-columns {
-  margin:0;
-  padding: 0;
+    column-gap: 0.8em;
 
 }
 
