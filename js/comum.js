@@ -109,6 +109,7 @@ $(function(){
               var faiconD = '<a href="'+linkd+'"><i class="fa fa-download icone" aria-hidden="true"></i></a> ';
               var faiconV = ' <a target="_blank" href="'+linkV+'"><i class="fa fa-eye icone" aria-hidden="true"></i></a>';
               outhtml += '<div class="card">';
+
               outhtml +=  '<div class="card-header">'+faiconD+repname+faiconV+'</div>';
 
 
