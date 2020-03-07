@@ -4,7 +4,7 @@ $(function(){
   $('#botao').on('click', function(e){
     e.preventDefault();
 
-    $('#ghapidata').html('<div id="loader"><img src="css/loader.gif" alt="loading..."></div>');
+    $('#ghapidata').html('<div id="loader"><img src="img/buscando.gif" class="img-fluid" alt="Responsive image"></div>');
     
 
     var username = $('#entrada').val();
@@ -15,7 +15,7 @@ $(function(){
 
     requestJSON(requri, function(json) {
       if(json.message == "Not Found" || username == '') {
-        $('#ghapidata').html('<div class="nome-usuario">Usuário nao encontrado</div>');
+        $('#ghapidata').html('<div class="nome-usuario"><p>Usuário nao encontrado<p></div>');
       }
       
       else {
