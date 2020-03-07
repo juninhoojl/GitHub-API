@@ -43,7 +43,7 @@ $(function(){
         
         //var outhtml = '<h2>'+nomeTodo+'<p><img class="foto" src="'+aviurl+'" width="200" height="200" alt="'+'"></a></div>';
 
-        var outhtml  ='<div id="perfiluser" class="row">';
+        var outhtml  ='<div id="perfiluser" class="row bloco-perfil">';
             outhtml +=  '<div class="perfil col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">';
             outhtml +=    '<img src="'+aviurl+'" class="foto img-responsive">';
             outhtml +=  '</div>';
@@ -53,7 +53,7 @@ $(function(){
             outhtml +=  '</div>';
             outhtml +=  '<div class="nome-usuario">';
             outhtml +=   '<a target="_blank" href="'+profileurl+'">'+username+'<p></a>';
-            outhtml +=  '</div><hr>';
+            outhtml +=  '</div>';
             outhtml +=  '<div class="texto-perfil">';
             outhtml +=    perfilbio;
             outhtml +=  '</div>';
@@ -81,19 +81,33 @@ $(function(){
             
             // Inicia container cards
 
+
+
+    // "git_url": "git://github.com/juninhoojl/DIY-Firewall.git",
+    // "ssh_url": "git@github.com:juninhoojl/DIY-Firewall.git",
+    // "clone_url": "https://github.com/juninhoojl/DIY-Firewall.git",
+    // "svn_url": "https://github.com/juninhoojl/DIY-Firewall"
+
             outhtml += '<div class="card-columns">';
     
             $.each(repositories, function(index) {
               var repname = repositories[index].name;
               var linkd = repositories[index].html_url+'/archive/master.zip';
               var repdesc = repositories[index].description;
+              var linkV = repositories[index].html_url;
+              
+              var ssh_url = repositories[index].ssh_url;
+              var clone_url = repositories[index].clone_url;
 
-              faicon = '<a href="'+linkd+'"><i class="fa fa-download icone" aria-hidden="true"></i></a> ';
-
+              var faiconD = '<a href="'+linkd+'"><i class="fa fa-download icone" aria-hidden="true"></i></a> ';
+              var faiconV = ' <a target="_blank" href="'+linkV+'"><i class="fa fa-eye icone" aria-hidden="true"></i></a>';
               outhtml += '<div class="card">';
-              outhtml +=  '<div class="card-header">'+faicon+repname+'</div>';
-              outhtml +=  '<div class="card-body">'+repdesc+'</div>'; 
-              outhtml +=  '<div class="card-footer">'+linkd+'</div>';
+              outhtml +=  '<div class="card-header">'+faiconD+repname+faiconV+'</div>';
+              outhtml +=  '<div class="card-body text-left">'+repdesc;
+              outhtml +=   '<hr><a target="_blank" href="'+ssh_url+'"> <i class="fas fa-terminal icone"></i> '+ssh_url+'</a><hr><p>';
+              outhtml +=   '<a target="_blank" href="'+clone_url+'"> <i class="fa fa-clone icone " aria-hidden="true"></i> '+clone_url+'</a>';
+              outhtml +=  '</div>';
+              outhtml +=  '<div class="card-footer">'+linkV+'</div>';
               outhtml += '</div>';
 
             });
